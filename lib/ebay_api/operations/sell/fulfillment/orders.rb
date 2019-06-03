@@ -1,4 +1,5 @@
 require_relative 'orders/get'
+require_relative 'orders/list'
 
 class EbayAPI
   scope :sell do
