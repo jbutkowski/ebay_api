@@ -1,0 +1,3 @@
+require_relative 'shipping_fulfillments/create_fulfillment'
+require_relative 'shipping_fulfillments/get_fulfillment'
+require_relative 'shipping_fulfillments/list_fulfillments'
