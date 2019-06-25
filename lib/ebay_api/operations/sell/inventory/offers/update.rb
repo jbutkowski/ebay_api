@@ -3,15 +3,13 @@ class EbayAPI
     scope :inventory do
       scope :offers do
         operation :update do
-          path { offer_id }
-          option :offer_id
+          option :offer_id,   proc(&:to_s)
           option :content_language
-          option :data
+          option :data,   proc(&:to_h)
           http_method :put
           headers { { "Content-Language" => content_language } }
-          body do
-            data
-          end
+          path { offer_id }
+          body { data }
           response(204) { true }
         end
       end
