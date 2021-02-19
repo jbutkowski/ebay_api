@@ -1,9 +1,10 @@
 ---
 AllCops:
-  DisplayCopNames:    true
-  DisplayStyleGuide:  true
+  DisplayCopNames: true
+  DisplayStyleGuide: true
   StyleGuideCopsOnly: true
-  TargetRubyVersion:  2.3
+  TargetRubyVersion: 2.7
+  NewCops: enable
 
 Metrics/LineLength:
   AllowHeredoc: true
@@ -11,7 +12,7 @@ Metrics/LineLength:
   URISchemes:
     - http
     - https
-  
+
 Layout/SpaceInLambdaLiteral:
   Enabled: false
 
@@ -41,3 +42,10 @@ Style/RaiseArgs:
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Lint/ConstantDefinitionInBlock:
+  Exclude:
+    - spec/**/*
