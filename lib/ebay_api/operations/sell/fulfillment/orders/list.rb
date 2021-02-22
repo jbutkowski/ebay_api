@@ -12,6 +12,12 @@ class EbayAPI
           query do
             { orderIds: order_ids, filter: filter, limit: limit, offset: offset }.compact
           end
+
+          middleware { PaginatedCollection::MiddlewareBuilder.call }
+
+          response(200) do |*response|
+            PaginatedCollection.new(self, response, "orders")
+          end
         end
       end
     end
